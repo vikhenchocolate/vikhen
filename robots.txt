@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yourdomain.com.ua/sitemap.xml
+Sitemap: https://vikhen.com.ua/sitemap.xml
