@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.ico">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta property="og:title" content="Шоколадні картини на замовлення | VIKHEN">
+<meta property="og:description" content="Ексклюзивні картини та портрети з бельгійського шоколаду.">
+<meta property="og:image" content="https://yourdomain.com.ua/assets/logo.png">
+<script src="assets/script.js" defer></script>
+<link rel="canonical" href="https://yourdomain.com.ua/" />
+
+<title>VIKHEN — Фото, яке можна з'їсти</title>
+<meta name="description" content="Перетворюємо ваше фото на картину з бельгійського шоколаду. від 250 г, подарункова упаковка, виготовлення до 3 діб.">
+<style>
+:root{
+  --bg:#f5f1eb; --paper:#fffdf9; --ink:#181716; --muted:#716b63;
+  --line:#ddd5ca; --accent:#b79a74; --dark:#171514; --radius:22px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:0 24px}
+header{position:absolute;z-index:5;top:0;left:0;right:0;color:#fff;background:linear-gradient(180deg,rgba(12,10,9,.96),rgba(12,10,9,.72) 72%,rgba(12,10,9,0));border-bottom:1px solid rgba(214,174,103,.20)}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;color:#d6ae67;text-decoration:none;font-family:Georgia,serif;font-size:28px;font-weight:600;letter-spacing:.08em}.brand img{width:45px;height:45px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.navlinks{display:flex;gap:28px;font-size:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 23px;border-radius:999px;background:#fff;color:#151313;font-weight:800;border:0;cursor:pointer}
+.btn.dark{background:var(--dark);color:#fff;font-size: 22px;}.btn.gold{background:var(--accent);color:#fff;}
+.hero{min-height:780px;display:grid;place-items:center;position:relative;overflow:hidden;background:#151313;color:#fff}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.58) saturate(.92)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.20) 70%,rgba(0,0,0,.45))}
+.hero-content{position:relative;z-index:2;width:100%;padding-top:100px}
+.eyebrow{font-size:14px;letter-spacing:.22em;text-transform:uppercase;opacity:.8;margin-bottom:22px;}
+.brand-name {font-family: 'Cinzel', serif;font-size: 40px;font-weight: 700;color: #D9B369;margin-left: 10px;letter-spacing: 3px;}
+.group {display: flex;gap: 0px; /* Задает отступ между объединенными элементами */}
+.tg-button {display: inline-block;background-color: #D9B369; /* Фірмовий колір Telegram */color: #000000;text-decoration: none;padding: 12px 24px;border-radius: 10px;font-size: 11px;font-weight: 600;transition: background-color 0.2s ease}
+.btn.sp{background:#000000;color:#D9B369;font-size: 22px;margin: 10px}
+
+h1{font-family:Georgia,serif;font-size:clamp(48px,7vw,92px);line-height:.93;margin:0 0 28px;max-width:780px;font-weight:500}
+.hero p{font-size:20px;line-height:1.5;max-width:600px;color:#eee}
+.price{font-size:26px;font-weight:900;margin:24px 0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.note{margin-top:18px;font-size:13px;opacity:.72}
+.section{padding:100px 0}.section.light{background:var(--paper)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.sectionproduct{padding:100px 0}.section.light{background:var(--paper)}
+
+h2{font-family:Georgia,serif;font-size:clamp(38px,5vw,64px);font-weight:500;line-height:1.02;margin:12px 0 22px}
+.lead{font-size:19px;line-height:1.7;color:#4d4842}
+.video-card{position:relative;overflow:hidden;border-radius:var(--radius);box-shadow:0 25px 70px rgba(31,24,18,.15)}
+.video-card video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:42px}
+.stat{background:var(--paper);padding:25px}.stat b{display:block;font-size:26px;margin-bottom:6px}.stat span{color:var(--muted);font-size:14px}
+
+.instaparent{text-align:right;}
+.productparent{text-align:center;}
+.insta-btn {display: inline-flex;margin: 5px;align-items: center;gap: 10px;background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);color: #ffffff;padding: 12px 24px;border-radius: 8px;text-decoration: none;font-weight: bold;font-family: sans-serif;transition: opacity 0.2s ease, transform 0.2s ease;}
+.insta-btn:hover {opacity: 0.9;transform: translateY(-2px);}
+.insta-icon {width: 20px;height: 20px;}
+
+.gallery{display:grid;grid-template-columns: .66fr .66fr .66fr; grid-template-rows: .66fr .66fr;gap:10px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:18px;display:block}
+.gallery .big{grid-row:span 2;min-height:620px}.gallery .small{min-height:300px}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{background:var(--paper);border:1px solid var(--line);padding:34px;border-radius:20px}
+.num{font-size:12px;letter-spacing:.16em;color:var(--accent);font-weight:900}.step h3{font-size:23px;margin:42px 0 12px}.step p{color:var(--muted);line-height:1.6}
+.quote{background:var(--dark);color:#fff;border-radius:28px;padding:65px;position:relative;overflow:hidden}
+.quote h2{max-width:760px}.quote p{font-size:18px;color:#c9c2bb;max-width:650px;line-height:1.7}
+.order{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:50px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px}
+.pricebox{font-size:54px;font-weight:900;margin:16px 0}.checks{list-style:none;padding:0;margin:25px 0}.checks li{padding:10px 0;border-bottom:1px solid var(--line)}
+
+form{display:grid;gap:12px}input,textarea{font:inherit;border:1px solid var(--line);background:#fff;padding:16px 17px;border-radius:13px;outline:none}textarea{min-height:110px;resize:vertical}
+footer{padding:42px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@500;600;700&display=swap');
+.brand{display:flex!important;align-items:center;gap:12px;color:#D4AF37!important;text-decoration:none!important}
+.brand img{width:46px;height:46px;object-fit:contain;filter:drop-shadow(0 2px 10px rgba(212,175,55,.18))}
+
+
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
+.product-card{background:#fffdf9;border:1px solid #ddd5ca;border-radius:22px;overflow:hidden;box-shadow:0 18px 50px rgba(31,24,18,.10);display:flex;flex-direction:column}
+.product-card.premium{background:#171514;color:#fff;border-color:#8f6d32;box-shadow:0 22px 65px rgba(0,0,0,.28)}
+.product-image{position:relative;aspect-ratio:4/3;background:#e8e2d9;overflow:hidden}
+.product-image img{width:100%;height:100%;object-fit:cover;display:block}
+.product-badge,.premium-badge{position:absolute;top:14px;left:14px;padding:8px 12px;border-radius:999px;background:#f1d49b;color:#241b10;font:700 11px Montserrat,Arial,sans-serif;letter-spacing:.08em}
+.premium-badge{left:auto;right:14px;background:#D4AF37}
+.product-body{padding:27px 27px 25px;display:flex;flex-direction:column;flex:1}
+.product-kicker{font:700 10px Montserrat,Arial,sans-serif;letter-spacing:.16em;color:#a9895b;text-transform:uppercase}
+.product-card h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;line-height:1;margin:10px 0 16px}
+.product-features{list-style:none;padding:0;margin:0 0 24px;color:#716b63;line-height:1.7;font-size:14px}
+.product-features li::before{content:'✓';color:#b79a4b;font-weight:700;margin-right:9px}
+.premium .product-features{color:#d1cbc2}
+.product-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.product-bottom strong{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:600;color:#b58d43}
+.premium .product-bottom strong{color:#D4AF37}
+.product-bottom .btn{padding:12px 18px}
+
+/* --- СТИЛІ ДЛЯ SEO-ТЕКСТУ --- */
+.seo-text-section {max-width: 1000px;margin: 40px auto;padding: 30px;background-color: #ffffff;border-top: 1px solid #eaeaea;color: #555;}
+.seo-title {font-family: 'Cinzel', serif;font-size: 22px;color: #333;margin-bottom: 20px;text-align: center;}
+.seo-text-section p {font-size: 15px;line-height: 1.6;margin-bottom: 15px;text-align: justify;}
+.seo-text-section strong {color: #333;font-weight: normal; /* Зберігаємо ключові слова без зайвого виділення для естетики */}
+
+@media(max-width:800px){
+ .navlinks{display:none}.hero{min-height:720px}.hero-content{padding-top:80px}
+ .grid2,.order{grid-template-columns:1fr;gap:35px}.steps{grid-template-columns:1fr}
+ .gallery{grid-template-columns:1fr}.gallery .big{min-height:430px}.gallery .small{min-height:260px}
+ .stats{grid-template-columns:1fr}.section{padding:72px 0}.quote{padding:38px 25px}.order{padding:30px}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <div class="group"><a class="logo" href="#"><img src="assets/logo.png" alt="VIKHEN" style="height:42px;width:auto;display:block;object-fit:contain;border-radius:4px"></a>
+  <span class="brand-name" href="#">VIKHEN</span></div>
+  <nav class="navlinks"><a href="#how">ЯК ЦЕ ПРАЦЮЄ</a><a href="#works">РОБОТИ</a><a href="#order">ЗАМОВЛЕННЯ</a></nav>
+  <small style="color:#D9B369;line-height:1.5">+38 (066) 292 29 43</small>
+  <a href="https://t.me/vikhen_chocolate" class="tg-button">Зв'язок з нами</a>
+  
+</div></header>
+
+<section class="hero">
+  <video autoplay muted loop playsinline poster="assets/hero.jpg"><source src="assets/VikhenV.mp4" type="video/mp4"></video>
+  <div class="wrap hero-content">
+    <div class="eyebrow">VIKHEN · Chocolate Art</div>
+    <h1>Фото, яке<br>можна з'їсти.</h1>
+    <p>Перетворюємо ваше особливе фото на картину з бельгійського шоколаду — у подарунковій упаковці.</p>
+    <div class="price">від 575 грн · від 250 г</div>
+    <div class="hero-actions"><a class="btn gold" href="#order">Створити свою картину</a><a class="btn" href="#works">Дивитися роботи</a></div>
+    <div class="note">Виготовлення — до 3 діб · доставка по Україні</div>
+  </div>
+</section>
+
+<section class="section light">
+ <div class="wrap grid2">
+  <div>
+   <div class="kicker">Це не просто подарунок</div>
+   <h2>Ваша історія.<br>У шоколаді.</h2>
+   <p class="lead">Звичайна фотографія перетворюється на незвичайний подарунок, який спочатку хочеться розглядати, а потім — скуштувати.</p>
+   <div class="stats">
+    <div class="stat"><b>від 250 г</b><span>шоколадної плитки</span></div>
+    <div class="stat"><b>від 575 ₴</b><span>вартість виробу</span></div>
+    <div class="stat"><b>до 3 діб</b><span>виготовлення</span></div>
+   </div>
+  </div>
+  <div class="video-card"><video autoplay muted loop playsinline poster="assets/hero.jpg"><source src="assets/VikhenV.mp4" type="video/mp4"></video></div>
+ </div>
+</section>
+
+<section class="section" id="works">
+ <div class="wrap">
+  <div class="kicker">VIKHEN Chocolate Art</div>
+  <h2>Виглядає як картина.<br>Але це шоколад.</h2>
+  <div class="instaparent"> 
+    <a href="https://www.instagram.com/vikhen.chocolate?igsi=MWhhdzBkZ2R6czA2OQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="insta-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="insta-icon">
+    <path fill="currentColor" d="M224.1 141.1c-43.6 0-79 35.4-79 79s35.4 79 79 79 79-35.4 79-79-35.4-79-79-79zm0 130.2c-28.3 0-51.2-22.9-51.2-51.2s22.9-51.2 51.2-51.2 51.2 22.9 51.2 51.2-22.9 51.2-51.2 51.2zm136.1-136.8c-9.6 0-17.4 7.8-17.4 17.4s7.8 17.4 17.4 17.4 17.4-7.8 17.4-17.4-7.8-17.4-17.4-17.4zm58.1 17.5c-5.8-61.4-49.8-105.4-111.2-111.2-35.7-3.4-142.2-3.4-177.9 0-61.4 5.8-105.4 49.8-111.2 111.2-3.4 35.7-3.4 142.2 0 177.9 5.8 61.4 49.8 105.4 111.2 111.2 35.7 3.4 142.2 3.4 177.9 0 61.4-5.8 105.4-49.8 111.2-111.2 3.4-35.7 3.4-142.2 0-177.9zM384 397.9c-18.7 18.7-44.1 29-71 29-37.1 0-141.9 0-179 0-26.9 0-52.3-10.3-71-29-18.7-18.7-29-44.1-29-71 0-37.1 0-141.9 0-179 0-26.9 10.3-52.3 29-71 18.7-18.7 44.1-29 71-29 37.1 0 141.9 0 179 0 26.9 0 52.3 10.3 71 29 18.7 18.7 29 44.1 29 71 0 37.1 0 141.9 0 179 0 26.9-10.3 52.3-29 71z"/>
+    </svg>Instagram</a>
+  </div>
+
+  <div class="gallery">
+   <img class="small" src="assets/Gallery1.jpg" alt="Картина з шоколаду">
+   <img class="small" src="assets/Gallery2.jpg" alt="Фотографія з шоколаду">
+   <img class="small" src="assets/Gallery3.jpg" alt="Преміальна упаковка VIKHEN">
+   <img class="small" src="assets/Gallery4.jpg" alt="Фото з шоколаду">
+   <img class="small" src="assets/Gallery5.jpg" alt="Картина з шоколаду">
+   <img class="small" src="assets/Gallery6.jpg" alt="Подарункова упаковка VIKHEN">
+  </div>
+ </div>
+ <div class="wrap">
+  <h2>Оберіть свою<br>шоколадну картину.</h2>
+  <p class="lead" style="max-width:760px">Три формати — два варіанти 250 г у білій упаковці з віконцем та преміальний формат 400 г в ексклюзивній упаковці, як у відео.</p>
+  <div class="products">
+   <article class="product-card">
+    <div class="product-image"><img src="assets/Gallery4.jpg" alt="VIKHEN 250 г — фотографія з шоколаду"><span class="product-badge">250 г</span></div>
+    <div class="product-body"><div class="product-kicker">FRAME 01 · Alisa</div><h3>Рамка «Alisa»</h3>
+     <ul class="product-features"><li>250 г шоколаду</li><li>Колір рамки на вибір</li><li>Подарункова упаковка з віконцем</li><li>Персональне фото</li></ul>
+     <div class="product-bottom"><strong>575 грн</strong></div>
+    </div>
+   </article>
+   <article class="product-card">
+    <div class="product-image"><img src="assets/Gallery5.jpg" alt="VIKHEN 250 г — Фото з шоколаду"><span class="product-badge">250 г</span></div>
+    <div class="product-body"><div class="product-kicker">FRAME 02 · Mira</div><h3>Рамка «Mira»</h3>
+     <ul class="product-features"><li>250 г шоколаду</li><li>Колір рамки на вибір</li><li>Подарункова упаковка з віконцем</li><li>Персональне фото</li></ul>
+     <div class="product-bottom"><strong>575 грн</strong></div>
+    </div>
+   </article>
+
+   <article class="product-card premium">
+    <div class="product-image"><img src="assets/Gallery1.jpg" alt="VIKHEN 400 г — Картина з шоколаду"><span class="product-badge">400 г</span><span class="premium-badge">EXCLUSIVE</span></div>
+    <div class="product-body"><div class="product-kicker">400 Г · EXCLUSIVE</div><h3>Ексклюзивна картина </h3>
+     <ul class="product-features"><li>400 г шоколаду</li><li>Колір рамки на вибір</li><li>Ексклюзивна подарункова упаковка — як у відео</li><li>Персональне фото</li></ul>
+     <div class="product-bottom"><strong>899 грн</strong>
+    </div>
+   </article>
+  
+  </div>
+ </div>
+<div class="productparent"><a class="btn sp" href="#order">Я обрав(ла) картину</a></div>
+</section>
+
+
+<section class="section light" id="how">
+ <div class="wrap">
+  <div class="kicker">Просто замовити</div>
+  <h2>Чотири кроки до подарунка</h2>
+  <div class="steps" style="grid-template-columns:repeat(4,1fr)">
+   <article class="step"><div class="num">01 — ФОТО</div><h3>Надсилаєте фото</h3><p>Обираєте фотографію, яку хочете перетворити на шоколадну картину.</p></article>
+   <article class="step"><div class="num">02 — ДИЗАЙН</div><h3>Ми створюємо</h3><p>Готуємо зображення та погоджуємо макет перед виготовленням.</p></article>
+   <article class="step"><div class="num">03 — ШОКОЛАД</div><h3>Виготовляємо</h3><p>Створюємо картину з якісного шоколаду та оформлюємо її у вибрану рамку.</p></article>
+   <article class="step"><div class="num">04 — ПОДАРУНОК</div><h3>Ви отримуєте</h3><p>Готовий виріб відправляємо по Україні у відповідній подарунковій упаковці.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="wrap">
+  <div class="quote">
+   <div class="kicker" style="color:#b79a74">Ідея VIKHEN</div>
+   <h2>Подарунок, який людина не очікує побачити.</h2>
+   <p>Фотографія з важливим моментом, оформлена як картина, зроблена з бельгійського шоколаду. Саме поєднання «вау» і персоналізації робить його особливим.</p>
+   <a class="btn gold" href="#order">Хочу таку картину</a>
+  </div>
+ </div>
+</section>
+
+<section class="section light" id="order">
+ <div class="wrap">
+  <div class="order">
+   <div>
+    <div class="kicker">Замовлення</div>
+    <h2>Створіть свою<br>шоколадну картину.</h2>
+    <div class="pricebox">від 575 ₴</div>
+    <ul class="checks">
+      <li>✓ вироби від 250 г шоколадної плитки</li>
+      <li>✓ Ваше фото</li>
+      <li>✓ Подарункова упаковка</li>
+      <li>✓ Виготовлення до 3 діб</li>
+      <li>✓ Доставка по Україні</li>
+    </ul>
+   </div>
+   
+<!-- ОСЬ ГОЛОВНИЙ ЗВ'ЯЗОК: id="productionForm" -->
+        <form id="productionForm">
+            
+            <input type="text" id="clientName" placeholder="Ваше ім'я" required>
+            <input type="tel" id="clientPhone" placeholder="Ваш номер телефону" required>
+            
+            <select id="productType" required>
+                <option value="" disabled selected>Оберіть картину</option>
+                <option value="Картина з рамкою 'Alisa'">Картина з рамкою 'Alisa'</option>
+                <option value="Картина з рамкою 'Mira'">Картина з рамкою 'Mira'</option>
+                <option value="Картина ексклюзивна">Картина ексклюзивна</option>
+            </select>
+            <select id="productColor" required>
+                <option value="" disabled selected>Оберіть колір рамки</option>
+                <option value="Золотий">Золотий</option>
+                <option value="Срібний">Срібний</option>
+                <option value="Фіолетовий">Фіолетовий</option>
+                <option value="Аквамарин">Аквамарин</option>
+                <option value="Рожевий">Рожевий</option>
+                <option value="Зелений">Зелений</option>
+                <option value="Синій">Синій</option>
+            </select>
+
+            
+            <input type="number" id="productQuantity" placeholder="Кількість (шт)" min="1">
+            <textarea id="clientComment" rows="4" placeholder="Ваш коментар"></textarea>
+            
+            <button class="btn dark" type="submit" id="submitBtn">Залишити заявку</button>
+            <div id="formMessage" style="display:center; margin-top: 10px;"></div>
+        </form>
+  </div>
+ </div>
+</section>
+<section class="seo-text-section">
+        <h2 class="seo-title">Ексклюзивні шоколадні подарунки, які дивують</h2>
+        
+        <p>Шукаєте <strong>оригінальний подарунок</strong>, який гарантовано викличе щирі емоції? Коли виникає складне питання, <strong>що подарувати людині, у якої все є</strong>, картина з шоколаду стає ідеальним рішенням. Це не просто преміальні солодощі, а справжній <strong>подарунок з вау-ефектом</strong>, який поєднує естетику мистецтва та неперевершений смак.</p>
+        
+        <p>У майстерні VIKHEN ви можете <strong>замовити шоколадну картину</strong>, створену з увагою до кожної деталі. Ми пропонуємо вироби у двох форматах: класичні картини (250 г) з вибором рамок та преміальні ексклюзивні картини (400 г) у розкішному пакуванні. Усі наші <strong>ексклюзивні шоколадні подарунки</strong> виготовляються з високоякісних інгредієнтів, щоб задовольнити найвибагливіших гурманів.</p>
+        
+        <p>Якщо вам потрібна <strong>картина з шоколаду (Київ)</strong>, ми забезпечимо швидке та зручне виконання вашого замовлення. Даруйте своїм близьким, друзям чи колегам незабутні миті радості — обирайте <strong>шоколадні картини на замовлення</strong> від бренду VIKHEN.</p>
+    </section>
+<footer><div class="wrap"><div><b>VIKHEN</b> · Chocolate Art</div><div>Фото, яке можна з'їсти.</div></div></footer>
+<script src="assets/script.js"></script>
+</body>
+</html>
