@@ -1,5 +1,12 @@
 console.log("Скрипт VIKHEN ініціалізується...");
 
+// 1. Словник цін для картин
+const PRICES = {
+    "Картина з рамкою 'Alisa'": 650,
+    "Картина з рамкою 'Mira'": 650,
+    "Картина ексклюзивна": 950
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM повністю завантажено.");
     
@@ -24,7 +31,52 @@ document.addEventListener('DOMContentLoaded', function() {
         return Boolean(type && color && flavor);
     }
 
-    // Автоматичне приховування повідомлення про помилку під час заповнення полів
+    // Функція зміни кольору та стану кнопки "Додати картину"
+    function updateAddButtonState() {
+        if (!addBtn) return;
+        const blocks = container.querySelectorAll('.product-selection');
+        const lastBlock = blocks[blocks.length - 1];
+        
+        if (isBlockValid(lastBlock)) {
+            addBtn.disabled = false;
+            addBtn.style.backgroundColor = ''; 
+            addBtn.style.color = '';
+            addBtn.style.cursor = 'pointer';
+            addBtn.style.opacity = '1';
+        } else {
+            addBtn.disabled = true;
+            addBtn.style.backgroundColor = '#d3d3d3'; 
+            addBtn.style.color = '#7a7a7a';
+            addBtn.style.cursor = 'not-allowed';
+            addBtn.style.opacity = '0.7';
+        }
+    }
+    
+    window.updateAddButtonState = updateAddButtonState;
+
+    // Функція підрахунку загальної суми
+    function calculateTotal() {
+        let total = 0;
+        const productBlocks = document.querySelectorAll('#productsContainer .product-selection');
+        
+        productBlocks.forEach(block => {
+            const typeSelect = block.querySelector('.product-type');
+            if (typeSelect && typeSelect.value && PRICES[typeSelect.value]) {
+                total += PRICES[typeSelect.value];
+            }
+        });
+
+        const totalDisplay = document.getElementById('totalPriceValue');
+        if (totalDisplay) {
+            totalDisplay.innerText = `${total} грн`;
+        }
+        
+        return total;
+    }
+
+    window.calculateTotal = calculateTotal;
+
+    // Оновлення суми та стану кнопки при зміні полів
     if (container) {
         container.addEventListener('change', function() {
             const blocks = container.querySelectorAll('.product-selection');
@@ -32,16 +84,19 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isBlockValid(lastBlock) && messageDiv && messageDiv.innerText.includes('обов’язкові поля')) {
                 messageDiv.style.display = 'none';
             }
+            calculateTotal();
+            updateAddButtonState();
         });
     }
 
-    // Динамічне додавання нової картини з обов'язковою перевіркою попередньої
+    // Динамічне додавання нової картини
     if (addBtn && container) {
-        addBtn.addEventListener('click', function() {
+        addBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
             const blocks = container.querySelectorAll('.product-selection');
             const lastBlock = blocks[blocks.length - 1];
             
-            // Перевіряємо обов'язкові поля останнього блоку (Картина №1, Картина №2 тощо)
             if (lastBlock && !isBlockValid(lastBlock)) {
                 if (messageDiv) {
                     messageDiv.style.display = 'block';
@@ -49,16 +104,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     messageDiv.innerText = 'Будь ласка, заповніть обов’язкові поля поточної картини (тип, колір та смак шоколаду), перш ніж додавати наступну!';
                 }
                 
-                // Сфокусувати та підсвітити перше незаповнене обов'язкове поле
                 const emptySelect = Array.from(lastBlock.querySelectorAll('select[required]')).find(select => !select.value);
                 if (emptySelect) {
                     emptySelect.reportValidity();
                     emptySelect.focus();
                 }
-                return; // Зупиняємо виконання, нова картина не додається
+                return;
             }
             
-            // Очищаємо повідомлення про помилку, якщо все заповнено
             if (messageDiv) {
                 messageDiv.style.display = 'none';
             }
@@ -103,6 +156,8 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
 
             container.appendChild(newItem);
+            calculateTotal(); 
+            updateAddButtonState();
         });
     }
 
@@ -114,13 +169,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isSubmitting) return;
 
         const submitBtn = document.getElementById('submitBtn');
-
         const name = document.getElementById('clientName').value.trim();
         const rawPhone = document.getElementById('clientPhone').value.trim();
         const commentInput = document.getElementById('clientComment');
         const comment = commentInput ? commentInput.value.trim() : '';
 
-        // Валідація імені та телефону
         if (!name || rawPhone.length < 9) {
             if (messageDiv) {
                 messageDiv.style.display = 'block';
@@ -155,11 +208,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const fullPhone = '+380' + rawPhone;
+        const finalPrice = calculateTotal(); 
+
         const formData = new FormData();
         formData.append('name', name);
         formData.append('phone', fullPhone);
         formData.append('comment', comment || 'Без коментаря');
         formData.append('date', new Date().toLocaleString('uk-UA'));
+        formData.append('totalPrice', `${finalPrice} грн`);
 
         let itemsSummary = [];
 
@@ -170,13 +226,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const flavor = block.querySelector('.product-flavor').value;
             const inscription = block.querySelector('.product-inscription').value.trim() || 'Без напису';
             const photoFile = block.querySelector('.product-photo').files[0];
+            
+            // Визначаємо вартість картини
+            const itemPrice = PRICES[type] ? `${PRICES[type]} грн` : 'Ціна не вказана';
 
-          
-            itemsSummary.push(`${num}) ${type} | Колір: ${color} | Шоколад: ${flavor} | Напис: ${inscription}`);
+            // Формуємо рядок з додаванням ціни картини
+            itemsSummary.push(`${num}) ${type} | Колір: ${color} | Шоколад: ${flavor} | Напис: ${inscription} | Ціна: ${itemPrice}`);
                 
             if (photoFile) {
                 formData.append('photos', photoFile, `Картина_${num}_${photoFile.name}`);
-	    }
+            }
         });
 
         formData.append('product', itemsSummary.join('\n'));
@@ -197,7 +256,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 form.reset();
                 
-                // Відновлюємо початковий стан форми з одним блоком
                 if (container) {
                     container.innerHTML = `
                         <div class="product-selection" data-item="1">
@@ -233,6 +291,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     `;
                 }
+                calculateTotal();
+                updateAddButtonState();
             } else {
                 throw new Error('Помилка сервера');
             }
@@ -255,14 +315,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 3000);
         });
     });
+
+    calculateTotal();
+    updateAddButtonState(); 
 });
 
-// Глобальна функція для видалення блоків
 window.removeProductBlock = function(button) {
     const block = button.closest('.product-selection');
     if (block) {
         block.remove();
         reindexProducts();
+        if (typeof window.calculateTotal === 'function') window.calculateTotal();
+        if (typeof window.updateAddButtonState === 'function') window.updateAddButtonState();
     }
 };
 
