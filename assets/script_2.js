@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('phone', fullPhone);
         formData.append('comment', comment || 'Без коментаря');
         formData.append('date', new Date().toLocaleString('uk-UA'));
-        formData.append('totalPrice', `${finalPrice} грн`);
+        formData.append('totalPrice', `${finalPrice}`);
 
         let itemsSummary = [];
 
