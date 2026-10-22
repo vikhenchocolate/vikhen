@@ -273,6 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <option value="" disabled selected>Оберіть колір рамки *</option>
                                 <option value="Золотий">Золотий</option>
                                 <option value="Срібний">Срібний</option>
+                                <option value="Срібний">Бронзовий</option>
                                 <option value="Фіолетовий">Фіолетовий</option>
                                 <option value="Аквамарин">Аквамарин</option>
                                 <option value="Рожевий">Рожевий</option>
